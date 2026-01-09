@@ -576,9 +576,12 @@
                 // hide recommended profiles and stuff
                 document.querySelectorAll('section [data-testid="cellInnerDiv"]>div>div>div').forEach(x => x.remove())
                 document.querySelectorAll('section [data-testid="cellInnerDiv"]>div>div>[role="link"]').forEach(x => x.remove())
-                document.querySelector(more).scrollIntoView({
-                    'behavior': 'smooth'
-                })
+                const moreElement = document.querySelector(more)
+                if (moreElement) {
+                    moreElement.scrollIntoView({
+                        'behavior': 'smooth'
+                    })
+                }
 
                 // if it is a Retweet, unretweet it
                 unretweet = document.querySelector('[data-testid="unretweet"]')
